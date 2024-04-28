@@ -8,7 +8,7 @@ int main()
 	sf::Clock clock;
 
 	sf::Texture texture;
-	texture.loadFromFile("../Assets/kenney_racing-pack/PNG/Cars/car_blue_1.png");
+	texture.loadFromFile("Assets/kenney_racing-pack/PNG/Cars/car_blue_1.png");
 
 	sf::Sprite sprite;
 	sprite.setTexture(texture);
