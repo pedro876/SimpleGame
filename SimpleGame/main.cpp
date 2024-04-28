@@ -1,10 +1,17 @@
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp> //https://www.sfml-dev.org/tutorials/2.6/start-vc.php
+#include "globalInclude.h"
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.0f);
-	shape.setFillColor(sf::Color::Green);
+	window.setFramerateLimit(60);
+	sf::Clock clock;
+
+	sf::Texture texture;
+	texture.loadFromFile("../Assets/kenney_racing-pack/PNG/Cars/car_blue_1.png");
+
+	sf::Sprite sprite;
+	sprite.setTexture(texture);
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -15,9 +22,13 @@ int main()
 			}
 		}
 
+		sf::Time elapsed = clock.getElapsedTime();
+		float deltaTime = elapsed.asSeconds();
+		clock.restart();
 
 		window.clear();
-		window.draw(shape);
+		window.draw(sprite);
+
 		window.display();
 	}
 
