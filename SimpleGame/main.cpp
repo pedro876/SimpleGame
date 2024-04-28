@@ -13,6 +13,8 @@ int main()
 	sf::Sprite sprite;
 	sprite.setTexture(texture);
 
+	GameObject* obj = new GameObject("first object");
+
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event))
