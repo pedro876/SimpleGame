@@ -1,0 +1,1 @@
+This project is just a test that I am using to familiarize myself again with C++ before delving into graphic APIs such as Direct3D11.
