@@ -9,7 +9,6 @@ class Transform : Component
 public:
 	int childCount;
 	glm::vec2 position;
-
 	std::vector<Transform*> children;
 
 	Transform(GameObject* gameObject);

@@ -7,5 +7,6 @@ class Component
 public:
 	GameObject* gameObject;
 
+	Component(GameObject* gameObject);
 };
 
