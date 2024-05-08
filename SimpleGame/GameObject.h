@@ -5,7 +5,8 @@
 #include <string>
 #include <vector>
 
-class Component;
+//template<class Derived>
+//class Component;
 
 class GameObject
 {
@@ -15,17 +16,17 @@ public:
 
 	GameObject(const std::string& name);
 
-	template<typename TComponent> TComponent* AddComponent() {
-		TComponent* instance = new TComponent(this);
-		this->components.push_back((Component*)instance);
+	template<typename Derived> Derived* AddComponent() {
+		Derived* instance = Component<Derived>::Instantiate(this);
+		this->components.push_back((Component<void>*)instance);
 		this->componentCount++;
 		return instance;
 	}
 
-	template<typename TComponent> TComponent* GetComponent() {
+	template<typename Derived> Derived* GetComponent() {
 		for (Component* component : components)
 		{
-			TComponent* typedComponent = dynamic_cast<TComponent*>(component);
+			Derived* typedComponent = dynamic_cast<Derived*>(component);
 			if (typedComponent != nullptr)
 			{
 				return typedComponent;
@@ -36,5 +37,5 @@ public:
 
 private:
 	int componentCount;
-	std::vector<Component*> components;
+	std::vector<Component<void>*> components;
 };

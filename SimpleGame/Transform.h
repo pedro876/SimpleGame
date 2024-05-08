@@ -4,14 +4,13 @@
 #include <glm/vec2.hpp>
 #include <vector>
 
-class Transform : Component
+class Transform : Component<Transform>
 {
 public:
 	int childCount;
 	glm::vec2 position;
 	std::vector<Transform*> children;
 
-	Transform(GameObject* gameObject);
-private:
+	Transform();
 };
 

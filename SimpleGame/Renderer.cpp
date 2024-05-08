@@ -1,6 +1,6 @@
 #include "Renderer.h"
 
-Renderer::Renderer(GameObject* gameObject) : Component(gameObject)
+Renderer::Renderer()
 {
 	GL::sprites.push_back(&(this->sprite));
 }

@@ -2,10 +2,10 @@
 #include "Component.h"
 #include "GL.h"
 
-class Camera : Component
+class Camera : Component<Camera>
 {
 public:
-	Camera(GameObject* gameObject);
+	//Camera(GameObject* gameObject);
 
 	void Render();
 

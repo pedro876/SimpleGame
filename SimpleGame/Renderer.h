@@ -3,11 +3,11 @@
 #include "Component.h"
 #include "GL.h"
 
-class Renderer : Component
+class Renderer : Component<Renderer>
 {
 public:
 	sf::Sprite sprite;
-	Renderer(GameObject* gameObject);
+	Renderer();
 private:
 };
 

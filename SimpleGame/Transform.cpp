@@ -1,6 +1,6 @@
 #include "Transform.h"
 
-Transform::Transform(GameObject* gameObject) : Component(gameObject)
+Transform::Transform()
 {
 	this->position = glm::vec2(0.f, 0.f);
 	this->childCount = 0;
